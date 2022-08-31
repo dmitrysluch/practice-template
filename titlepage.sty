@@ -1,0 +1,116 @@
+\newcommand{\@tpageUDK}{}
+\newcommand{\@tpageType}{}
+\newcommand{\@tpageTitle}{}
+\newcommand{\@tpageStage}{}
+\newcommand{\@tpageGroup}{}
+\newcommand{\@tpageStudentSgn}{}
+\newcommand{\@tpageStudent}{}
+\newcommand{\@tpageStudentDate}{}
+\newcommand{\@tpageAdvisor}{}
+\newcommand{\@tpageAdvisorTitle}{}
+\newcommand{\@tpageAdvisorAffiliation}{}
+\newcommand{\@tpageAdvisorDate}{}
+\newcommand{\@tpageGrade}{}
+\newcommand{\@tpageAdvisorSgn}{}
+\newcommand{\@tpageYear}{}
+\newcommand{\@tpageYearOfStudy}{}
+
+\newcommand{\setUDK}[1]{\renewcommand{\@tpageUDK}{#1}}
+\newcommand{\setTitle}[1]{\renewcommand{\@tpageTitle}{#1}}
+\newcommand{\setStage}[1]{\renewcommand{\@tpageStage}{#1}}
+\newcommand{\setGroup}[1]{\renewcommand{\@tpageGroup}{#1}}
+\newcommand{\setStudentSgn}[1]{\renewcommand{\@tpageStudentSgn}{#1}}
+\newcommand{\setStudent}[1]{\renewcommand{\@tpageStudent}{#1}}
+\newcommand{\setStudentDate}[1]{\renewcommand{\@tpageStudentDate}{#1}}
+\newcommand{\setAdvisor}[1]{\renewcommand{\@tpageAdvisor}{#1}}
+\newcommand{\setAdvisorTitle}[1]{\renewcommand{\@tpageAdvisorTitle}{#1}}
+\newcommand{\setAdvisorAffiliation}[1]{\renewcommand{\@tpageAdvisorAffiliation}{#1}}
+\newcommand{\setAdvisorDate}[1]{\renewcommand{\@tpageAdvisorDate}{#1}}
+\newcommand{\setGrade}[1]{\renewcommand{\@tpageGrade}{#1}}
+\newcommand{\setAdvisorSgn}[1]{\renewcommand{\@tpageAdvisorSgn}{#1}}
+\newcommand{\setYear}[1]{\renewcommand{\@tpageYear}{#1}}
+\newcommand{\setYearOfStudy}[1]{\renewcommand{\@tpageYearOfStudy}{#1}}
+
+\newcommand{\setToResearch}{\renewcommand{\@tpageType}{Исследовательском проект}}
+\newcommand{\setToProgram}{\renewcommand{\@tpageType}{Программный проект}\renewcommand{\@tUDK}{}}
+
+\newcommand{\@textWithScript}[3]{\parbox[t]{#1}{\hbox to #1{\hfil#2\strut\hfil}\hrule\hbox to #1{\hfil #3\strut\hfil}}}
+
+\newcommand{\@tUDK}{УДК: \@tpageUDK}
+
+\newcommand{\@tTitle}{\@textWithScript{15cm}{\@tpageTitle}{}}
+
+\newcommand{\@tGroup}{\parbox[t]{1cm}{\hbox{\@tpageGroup\strut}\hrule}}
+\newcommand{\@tYearOfStudy}{\parbox[t]{1cm}{\hbox{\@tpageYearOfStudy\strut}\hrule}}
+
+\newcommand{\@tStudentSgn}{\@textWithScript{3cm}{\@tpageStudentSgn}{\small (подпись)}}
+
+
+\newcommand{\@tStudent}{\@textWithScript{3cm}{\@tpageStudent}{\small (инициалы, фамилия)}}
+
+
+\newcommand{\@tStudentDate}{\@textWithScript{4.4cm}{\@tpageStudentDate}{Дата}}
+
+\newcommand{\@tAdvisor}{\@textWithScript{17cm}{\@tpageAdvisor}{\small (ФИО руководителя практики)}}
+
+\newcommand{\@tAdvisorTitle}{\@textWithScript{17cm}{\@tpageAdvisorTitle}{\small (подразделение ФКН, должность)}}
+
+\newcommand{\@tAffiliation}{\@textWithScript{17cm}{\@tpageAdvisorAffiliation}{Место работы (Компания или подразделение НИУ ВШЭ)}}
+
+\newcommand{\@tAdvisorData}{\@textWithScript{1.5cm}{\@tpageAdvisorDate}{}}
+
+\newcommand{\@tGrade}{\@textWithScript{3cm}{\@tpageGrade}{\small (оценка)}}
+
+\newcommand{\@tAdvisorSgn}{\@textWithScript{3cm}{\@tpageAdvisorSgn}{(подпись)}}
+
+
+\newcommand{\makeTitlePage}{
+
+    {\setstretch{1.0}
+    \begin{center}
+Правительство Российской Федерации\\
+Федеральное государственное автономное \\
+образовательное учреждение высшего образования\\ 
+«Национальный исследовательский университет «Высшая кола экономики»\\
+    \bigskip
+Факультет компьютерных наук\\
+Образовательная программа бакалавриата 01.03.02 «Прикладная математика и информатика»
+    \end{center}
+    }
+    
+    \vspace{8em}
+    
+    \begin{center}
+    \textbf{ОТЧЕТ\\по производственной практике}
+    \end{center}    
+    \begin{center}
+        \textbf{на факультете компьютерных наук НИУ ВШЭ}\\
+        {\small (название организации, предприятия)} 
+    \end{center}
+    \vspace{2em}
+    {\setstretch{1.3}
+    \begin{flushright}
+    Выполнил студент\\ группы \@tpageGroup\\
+     \@tStudent\\
+     \@tStudentSgn
+    \end{flushright}
+    }
+    \textbf{Руководитель практики:}\\
+    {\setstretch{1.5}
+    \@tAdvisorTitle\ \\
+    \@tAdvisor\\
+
+    Дата \@tpageAdvisorDate \hfill \@tGrade \hfill\@tAdvisorSgn
+    }
+    %\hspace*{5cm}\hspace*{-5cm}Куратор:\hfill < степень>, <звание>, <ФИО полностью>\\
+   
+
+    
+    \vspace{\fill}
+    
+    \begin{center}
+    Москва \@tpageYear
+    \end{center}
+\thispagestyle{empty}
+\newpage
+}
